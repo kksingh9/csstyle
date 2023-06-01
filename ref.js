@@ -5,6 +5,7 @@ import ErrorModal from "../UI/ErrorModal";
 const UserDetail = (props) => {
   const nameInputRef = useRef();
   const ageInputRef = useRef();
+  const collegeInputRef = useRef();
   // const [EnterUsername, setEnterUsername] = useState("");
   // const [EnterUserAge, setEnterUserAge] = useState("");
   const [error, setError] = useState();
@@ -20,11 +21,13 @@ const UserDetail = (props) => {
     event.preventDefault();
     const enteredName = nameInputRef.current.value;
     const enteredAge = ageInputRef.current.value;
+    const enteredCollege = collegeInputRef.current.value;
     const userDetail = {
       userName: enteredName,
       userAge: enteredAge,
+      userCollege: enteredCollege
     };
-    if (enteredName.trim().length === 0 || enteredAge.trim().length === 0) {
+    if (enteredName.trim().length === 0 || enteredAge.trim().length === 0 || enteredCollege.trim().length === 0) {
       setError({
         title: "Invalid input",
         message: "Please enter a valid name and age (non-empty values).",
@@ -43,6 +46,7 @@ const UserDetail = (props) => {
     // setEnterUsername("");
     nameInputRef.current.value = '';
     ageInputRef.current.value = '';
+    collegeInputRef.current.value = '';
   };
   const errorHandler = () => {
     setError(null);
@@ -67,6 +71,16 @@ const UserDetail = (props) => {
               // onChange={onUsernameHandler}
               // value={EnterUsername}
               ref={nameInputRef}
+              type="text"
+            />
+          </div>
+          <div className="form-reg">
+            <label htmlFor="usercollege">UserCollege</label>
+            <input
+              id="usercollege"
+              // onChange={onUsernameHandler}
+              // value={EnterUsername}
+              ref={collegeInputRef}
               type="text"
             />
           </div>
