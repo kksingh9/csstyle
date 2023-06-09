@@ -1,0 +1,34 @@
+.meals {
+    max-width: 60rem;
+    width: 90%;
+    margin: 2rem auto;
+    animation: meals-appear 1s ease-out forwards;
+  }
+  
+  .meals ul {
+    list-style: none;
+    margin: 0;
+    padding:  20px;
+    background-color: aqua;
+    border-radius: 20px;
+    box-shadow: 0 1px 18px 10px rgba(0, 0, 0, 0.25);
+  }
+  .meals ul li {
+    color: blue;
+    font-family: cursive;
+  }
+  .meals ul h3 {
+    color: brown;
+  }
+  
+  @keyframes meals-appear {
+    from {
+      opacity: 0;
+      transform: translateY(3rem);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
